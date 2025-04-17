@@ -63,5 +63,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Send PNG buffer
     res.setHeader('Content-Type', 'image/png');
-    canvas.pngStream().pipe(res);
+    canvas.createPNGStream().pipe(res);
 }
