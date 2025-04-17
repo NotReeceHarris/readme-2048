@@ -1,6 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createCanvas } from 'canvas';
+import { createCanvas, registerFont } from 'canvas';
 import { getGameState } from '../../lib/game';
+import path from 'path';
+
+registerFont(
+    path.resolve('./public/Roboto-Regular.ttf'),
+    { family: 'Roboto' }
+);
 
 const tileColors: Record<number, string> = {
     0: '#cdc1b4',
@@ -55,7 +61,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // Tile value
             if (value !== 0) {
                 ctx.fillStyle = getTextColor(value);
-                ctx.font = `${value < 100 ? 48 : 36}px Arial`;
+                ctx.font = `${value < 100 ? 48 : 36}px Roboto`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(value.toString(), x + tileSize / 2, y + tileSize / 2);
