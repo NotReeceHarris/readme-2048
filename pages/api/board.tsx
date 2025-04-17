@@ -55,7 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // Tile value
             if (value !== 0) {
                 ctx.fillStyle = getTextColor(value);
-                ctx.font = `${value < 100 ? 48 : 36}px sans-serif`;
+                ctx.font = `${value < 100 ? 48 : 36}px Arial`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(value.toString(), x + tileSize / 2, y + tileSize / 2);

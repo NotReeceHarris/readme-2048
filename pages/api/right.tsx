@@ -13,5 +13,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     board: getGameState().board // Return the current board for debugging
   }); */;
 
-  res.redirect(307, 'https://github.com/NotReeceHarris').end();
+  res.redirect(307, 'https://github.com/NotReeceHarris#play-2048').end();
 }
