@@ -48,7 +48,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
             // Tile background
             ctx.fillStyle = tileColors[value] || '#3c3a32';
-            ctx.fillRect(x, y, tileSize, tileSize);
+            ctx.beginPath();
+            ctx.roundRect(x, y, tileSize, tileSize, 6); // 6px rounded corners
+            ctx.fill();
 
             // Tile value
             if (value !== 0) {
