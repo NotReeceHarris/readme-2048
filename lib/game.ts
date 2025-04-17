@@ -138,8 +138,9 @@ function checkGameOver() {
         }
     }
 
-    // No moves left
+    // No moves left reset board
     gameState.gameOver = true;
+    initializeGame();
 }
 
 // Initialize game on server start
